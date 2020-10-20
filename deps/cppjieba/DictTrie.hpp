@@ -143,7 +143,7 @@ class DictTrie {
     size_t lineno = 0;
     for (size_t i = 0; i < files.size(); i++) {
       ifstream ifs(files[i].c_str());
-      XCHECK(ifs.is_open()) << "open " << files[i] << " failed"; 
+      XCHECK(ifs.is_open()) << "open " << files[i] << " failed." << " i=" << i << ", files=" << filePaths;
       string line;
       
       for (; getline(ifs, line); lineno++) {
