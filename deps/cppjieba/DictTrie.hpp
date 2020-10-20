@@ -140,6 +140,11 @@ class DictTrie {
 
   void LoadUserDict(const string& filePaths) {
     vector<string> files = limonp::Split(filePaths, "|;");
+
+    for (size_t i = 0; i < files.size(); i++) {
+      XLOG(ERROR) << "file-test, idx=" << i << ", file=" << files[i].c_str() << ", size=" << files.size();
+    }
+
     size_t lineno = 0;
     for (size_t i = 0; i < files.size(); i++) {
       ifstream ifs(files[i].c_str());
